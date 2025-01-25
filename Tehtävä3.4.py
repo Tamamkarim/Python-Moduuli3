@@ -1,13 +1,16 @@
 
-def onko_karkausvuosi(vuosi):
+def tarkista_karkausvuosi():
+    # Kysy vuosi
+    try:
+        vuosi = float(input("Anna vuosiluku: "))
+    except ValueError:
+        print("Kirjoita vain numeroita!")
+        return
+
     if (vuosi % 4 == 0 and vuosi % 100 != 0) or (vuosi % 400 == 0):
-        return True
+        print(f"{vuosi} on karkausvuosi!")
     else:
-        return False
+        print(f"{vuosi} ei ole karkausvuosi.")
 
-vuosi = int(input("vuosiluku: "))
+tarkista_karkausvuosi()
 
-if onko_karkausvuosi(vuosi):
-    print(f"{vuosi} on karkausvuosi.")
-else:
-    print(f"{vuosi} ei ole karkausvuosi.")
